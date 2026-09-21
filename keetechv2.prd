@@ -1,0 +1,30 @@
+# Product Requirement Document (PRD): KeeTech Agency Platform
+**Document Version:** 2.2  
+**Target Domain:** keetech.my.id  
+**Brand Positioning:** Modern Enterprise IT & AI Solutions Agency  
+**Target Tech Stack:** Next.js 14+ (App Router), React.js, Tailwind CSS, Shadcn UI, Framer Motion, Lucide Icons, Laravel (Backend/API)
+
+---
+
+## 1. Executive Summary & Objectives
+KeeTech bertransformasi dari penyedia layanan IT umum menjadi **Modern IT & AI Solutions Agency**. Platform web ini berfungsi sebagai *company profile*, *brand authority*, dan *interactive showcase* untuk menarik kepercayaan klien korporat, instansi pemerintah, serta pebisnis modern.
+
+### Core Value Propositions:
+- **Dual Specialty Division:** Memisahkan operasional menjadi 2 divisi utama yaitu **Software & AI Innovation** (Developer Team) dan **Support & Infrastructure** (On-Site Team).
+- **AI-Powered Solutions:** Menunjukkan kapabilitas modern dalam integrasi AI, otomatisasi workflow, dan pembuatan perangkat lunak skala enterprise.
+- **Outcome-Based Showcase:** Menampilkan portofolio bukan sekadar galeri gambar, melainkan narasi berbasis dampak bisnis (*business impact*).
+
+---
+
+## 2. Information Architecture & Page Map
+keetech.my.id/
+├── / (Home / Landing Page)
+│   ├── Hero Section (Enterprise Tagline + Dual CTA)
+│   ├── Division Showcase (Software & AI vs Support & Infra)
+│   ├── Interactive Service Estimator / Inquiry Form
+│   ├── Featured Case Studies Preview
+│   └── Trust & Legitimations (SLA, Team Structure, Warranty)
+├── /services (Detailed Division Breakdown)
+├── /portfolio (Directory Case Studies & Interactive Filter)
+├── /portfolio/[slug] (Single Case Study Detail Page)
+└── /contact (Official Contact & Meeting Scheduling)

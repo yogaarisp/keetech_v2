@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f1ea;
+  --foreground: #14130f;
+  --card: #fffdf8;
+  --card-foreground: #14130f;
+  --muted: #eae5d9;
+  --muted-foreground: #56503f;
+  --border: #d3cbb9;
+  --ring: #1f3a8a;
+  --primary: #1f3a8a;
+  --primary-foreground: #f4f6ff;
+  --secondary: #0f2444;
+  --secondary-foreground: #eef2ff;
+  --accent: #16296b;
+  --destructive: #b3261e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-destructive: var(--destructive);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Display serif is used for reading-level headings, so give it a calmer
+   default weight. Unlayered on purpose to win over stray utilities. */
+.font-display {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(31, 58, 138, 0.16);
+}
+
+/* Editorial label — mono, tracked, with a leading rule */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: var(--primary);
+}
+
+/* Italic vermilion emphasis inside serif display headings */
+.text-gradient {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.paper-dots {
+  background-image: radial-gradient(rgba(20, 19, 15, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(20, 19, 15, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 19, 15, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.hairline {
+  border-top: 1px solid var(--border);
+}
+
+/* Cards get an accent rule that draws in on hover instead of a glow */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 2px;
+  width: 2.5rem;
+  background: var(--primary);
+  transition: width 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.card-glow:hover::after {
+  width: 100%;
+}
+
+@keyframes scene-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, var(--float-z, 0px));
+  }
+  50% {
+    transform: translate3d(0, var(--float-y, -12px), var(--float-z, 0px));
+  }
+}
+
+@keyframes scene-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scene-dash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-scene-float,
+  .animate-scene-orbit,
+  .animate-scene-dash {
+    animation: none !important;
+  }
 }
