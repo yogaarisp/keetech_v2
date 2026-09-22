@@ -5,13 +5,23 @@
     "domain": "keetech.my.id",
     "url": "https://keetech.my.id",
     "tagline": "Modern IT & AI Solutions Agency",
-    "description": "KeeTech adalah agensi solusi IT & AI modern yang membantu korporasi dan instansi bertransformasi melalui software enterprise, integrasi AI, dan infrastruktur yang andal.",
+    "description": "KeeTech adalah agensi solusi IT & AI di Semarang yang membantu korporasi dan instansi bertransformasi melalui software enterprise, integrasi AI, dan infrastruktur yang andal. Melayani klien di Semarang, Jawa Tengah, dan seluruh Indonesia.",
     "contact": {
       "email": "hello@keetech.my.id",
       "phone": "+62 857-9941-0169",
       "whatsapp": "https://wa.me/6285799410169",
-      "address": "Jakarta, Indonesia — Melayani klien di seluruh Indonesia",
-      "officeHours": "Senin – Jumat, 09.00 – 18.00 WIB"
+      "streetAddress": "Jl. Pudaksari V, Bumirejo",
+      "addressLocality": "Semarang",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "50268",
+      "addressCountry": "ID",
+      "geo": {
+        "latitude": -7.0492,
+        "longitude": 110.3956
+      },
+      "address": "Jl. Pudaksari V, Bumirejo, Banyumanik, Kota Semarang, Jawa Tengah 50268 — Melayani klien di seluruh Indonesia",
+      "officeHours": "Senin – Jumat, 09.00 – 18.00 WIB",
+      "openingHoursSpec": "Mo-Fr 09:00-18:00"
     },
     "socials": [
       {
@@ -57,6 +67,10 @@
       {
         "label": "Portfolio",
         "href": "/portfolio"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
       },
       {
         "label": "Contact",
@@ -443,6 +457,61 @@
       "label": "Enterprise",
       "description": "Skala besar, multi-unit, timeline 4–6 bulan ke atas",
       "multiplier": 2.4
+    }
+  ],
+  "testimonials": [
+    {
+      "author": "Andi Wijaya",
+      "role": "IT Manager",
+      "company": "Bank BPR Regional",
+      "rating": 5,
+      "text": "KeeTech mengubah cara tim kami memproses dokumen kredit. Yang sebelumnya butuh 45 menit per berkas, sekarang cukup 12 menit. ROI tercapai dalam 3 bulan."
+    },
+    {
+      "author": "Siti Rahmawati",
+      "role": "Kepala Bagian TU",
+      "company": "Pemerintah Daerah",
+      "rating": 5,
+      "text": "Sistem e-office yang dibangun KeeTech mempercepat alur surat kami hingga 64%. Tim mereka profesional dan sangat responsif selama implementasi."
+    },
+    {
+      "author": "Budi Santoso",
+      "role": "Direktur Operasional",
+      "company": "Jaringan Ritel Nasional",
+      "rating": 5,
+      "text": "Platform omnichannel yang dibangun KeeTech menyatukan 40 cabang kami dalam satu sistem. Rekonsiliasi yang dulu 10 hari sekarang 1.5 hari. Luar biasa."
+    }
+  ],
+  "articles": [
+    {
+      "slug": "jasa-it-semarang-panduan-memilih",
+      "title": "Panduan Memilih Jasa Service PC & IT di Semarang untuk Bisnis Anda",
+      "excerpt": "Tips memilih jasa service PC, komputer, dan IT di Semarang yang tepat. Evaluasi portofolio, tim teknisi, SLA, dan rekam jejak proyek.",
+      "category": "Tips Bisnis",
+      "tags": ["jasa IT Semarang", "service PC Semarang", "konsultan IT", "tips"],
+      "date": "2025-09-15",
+      "readTime": "5 menit",
+      "content": "Memilih jasa IT di Semarang yang tepat bisa menjadi tantangan tersendiri. Banyak vendor menawarkan layanan serupa, namun kualitas dan keandalan bisa sangat berbeda. Berikut panduan praktis untuk membantu Anda membuat keputusan yang tepat.\n\n## 1. Evaluasi Portofolio dan Studi Kasus\n\nVendor IT yang profesional akan dengan bangga menampilkan portofolio mereka. Periksa studi kasus yang relevan dengan industri Anda — apakah mereka pernah mengerjakan proyek serupa? KeeTech misalnya, telah menangani proyek untuk bank, pemerintah daerah, rumah sakit, hingga manufaktur di Semarang dan sekitarnya.\n\n## 2. Periksa Struktur Tim\n\nApakah vendor memiliki tim khusus (developer, network engineer, teknisi on-site) atau hanya satu orang serabutan? Tim yang terstruktur menjamin keberlanjutan dukungan dan keahlian spesifik.\n\n## 3. SLA dan Komitmen Dukungan\n\nTanyakan tentang Service Level Agreement (SLA). Berapa lama response time untuk insiden? Apakah ada dukungan 24/7? KeeTech menyediakan SLA response time 1 jam untuk remote support dan 4 jam untuk on-site di area Semarang.\n\n## 4. Transparansi Harga\n\nHindari vendor yang tidak mau memberikan estimasi awal. KeeTech menyediakan kalkulator estimasi interaktif sehingga Anda bisa memproyeksikan investasi sebelum konsultasi.\n\n## 5. Rekam Jejak dan Testimoni\n\nCari review dan testimoni dari klien sebelumnya. Vendor yang sudah beroperasi lama di Semarang akan punya jejak yang bisa ditelusuri.\n\nKeeTech berbasis di Banyumanik, Semarang dan siap menjadi mitra IT Anda. Hubungi kami untuk konsultasi gratis."
+    },
+    {
+      "slug": "cctv-semarang-tips-instalasi",
+      "title": "Tips Pasang CCTV untuk Kantor & Rumah di Semarang",
+      "excerpt": "Panduan lengkap pasang CCTV IP untuk kantor, rumah, gudang, dan toko di Semarang. Pelajari coverage area, resolusi, dan retensi rekaman.",
+      "category": "CCTV & Security",
+      "tags": ["pasang CCTV Semarang", "instalasi CCTV Semarang", "CCTV rumah Semarang", "keamanan"],
+      "date": "2025-09-10",
+      "readTime": "6 menit",
+      "content": "Instalasi CCTV yang tepat sangat penting untuk keamanan bisnis Anda di Semarang. Berikut tips praktis dari tim instalasi KeeTech.\n\n## Pilih Kamera IP, Bukan Analog\n\nKamera CCTV IP menawarkan resolusi lebih tinggi, akses remote via smartphone, dan integrasi dengan sistem keamanan lainnya. Investasi awal sedikit lebih mahal, namun fleksibilitas dan kualitas jauh lebih baik.\n\n## Survei Coverage Area\n\nSetiap lokasi di Semarang memiliki karakteristik berbeda. Gudang di kawasan industri Semarang butuh coverage berbeda dari toko di pusat kota. Lakukan survei untuk menentukan zona risiko dan jumlah kamera optimal.\n\n## Resolusi dan Penyimpanan\n\nUntuk bisnis, minimal gunakan kamera 4MP. Simpan rekaman minimal 30 hari (90 hari untuk area risiko tinggi). NVR dengan kapasitas memadai adalah investasi wajib.\n\n## Integrasi Monitoring Terpusat\n\nJika Anda punya multiple lokasi di Semarang, pertimbangkan sistem monitoring terpusat. KeeTech telah memasang sistem CCTV terpusat untuk 12 lokasi sekaligus dengan retensi 90 hari.\n\n## Maintenance Berkala\n\nCCTV butuh perawatan: pembersihan lensa, pengecekan koneksi, dan update firmware. KeeTech menyediakan layanan maintenance berkala untuk klien di Semarang dan sekitarnya.\n\nButuh bantuan instalasi CCTV di Semarang? Tim on-site KeeTech siap mensurvei lokasi Anda dan merancang sistem keamanan yang optimal."
+    },
+    {
+      "slug": "integrasi-ai-bisnis-semarang",
+      "title": "Cara Integrasi AI & Chatbot Mengubah Bisnis di Semarang",
+      "excerpt": "Studi bagaimana integrasi AI, chatbot WhatsApp, dan document intelligence mengubah operasional bisnis di Semarang dan sekitarnya.",
+      "category": "AI & Technology",
+      "tags": ["AI Semarang", "chatbot Semarang", "integrasi AI", "chatbot WhatsApp"],
+      "date": "2025-09-05",
+      "readTime": "7 menit",
+      "content": "Integrasi AI bukan lagi eksklusif perusahaan besar. Bisnis di Semarang kini bisa memanfaatkan AI untuk efisiensi operasional. Berikut implementasi nyata yang telah kami lakukan.\n\n## Document Intelligence untuk Perbankan\n\nSalah satu klien bank BPR regional di Jawa Tengah memproses ratusan dokumen pengajuan kredit per minggu. Dengan sistem OCR + LLM yang kami bangun, waktu proses per berkas turun dari 45 menit menjadi 12 menit — pemangkasan 72%.\n\n## Chatbot AI untuk Layanan Pelanggan\n\nChatbot berbasis LLM bisa menjawab pertanyaan pelanggan 24/7. Bisnis retail di Semarang yang kami bantu berhasil mengurangi 60% tiket support rutin dengan chatbot AI yang terintegrasi ke WhatsApp.\n\n## Prediksi Demand untuk Retail\n\nDengan data historis penjualan, model machine learning bisa memprediksi demand per produk per cabang. Satu klien retail nasional mengurangi stockout hingga 18% setelah implementasi.\n\n## Mulai dari Mana?\n\nIntegrasi AI tidak harus langsung besar. Mulai dari satu use case yang jelas — misal chatbot FAQ, atau otomatisasi laporan. KeeTech menyediakan konsultasi gratis untuk membantu Anda mengidentifikasi peluang AI di bisnis Anda.\n\nKami berbasis di Semarang dan siap membantu bisnis Anda bertransformasi dengan AI."
     }
   ]
 }

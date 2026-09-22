@@ -11,6 +11,9 @@ export async function Footer() {
     getDivisions(),
   ]);
 
+  // Strip non-digit characters for tel: link (keep + and digits)
+  const telHref = `tel:${site.contact.phone.replace(/[^\d+]/g, "")}`;
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -20,6 +23,22 @@ export async function Footer() {
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
               {site.description}
             </p>
+            {site.socials.length > 0 && (
+              <div className="flex gap-3">
+                {site.socials.map((social) => (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    aria-label={social.label}
+                  >
+                    {social.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <div>
@@ -65,7 +84,9 @@ export async function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>{site.contact.phone}</span>
+                <a href={telHref} className="hover:text-primary">
+                  {site.contact.phone}
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -83,7 +104,7 @@ export async function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {site.fullName}
+            &copy; {new Date().getFullYear()} {site.fullName}
           </p>
           <p className="text-xs text-muted-foreground">
             {site.domain} — {site.tagline}

@@ -14,11 +14,13 @@ import {
 } from "lucide-react";
 import { getCaseStudies, getCaseStudyBySlug } from "@/lib/data/portfolio";
 import { getDivision } from "@/lib/data/divisions";
+import { getSite } from "@/lib/data/site";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/motion/fade-in";
+import { BreadcrumbLd, CaseStudyLd } from "@/components/seo/structured-data";
 
 export async function generateStaticParams() {
   const caseStudies = await getCaseStudies();
@@ -31,9 +33,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = await getCaseStudyBySlug(slug);
   if (!study) return { title: "Case Study Not Found" };
+  const site = await getSite();
   return {
-    title: `${study.title} — Case Study`,
+    title: `${study.title} — Case Study KeeTech`,
     description: study.summary,
+    alternates: {
+      canonical: `/portfolio/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: `${study.title} — Case Study KeeTech`,
+      description: study.summary,
+      url: `${site.url}/portfolio/${slug}`,
+      publishedTime: `${study.year}-01-01T00:00:00+07:00`,
+      authors: [site.fullName],
+      tags: [study.category, ...study.techStack],
+    },
   };
 }
 
@@ -42,10 +57,18 @@ export default async function CaseStudyPage({ params }: PageProps<"/portfolio/[s
   const study = await getCaseStudyBySlug(slug);
   if (!study) notFound();
 
-  const division = await getDivision(study.division);
+  const [division, site] = await Promise.all([getDivision(study.division), getSite()]);
 
   return (
     <article className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <BreadcrumbLd
+        items={[
+          { name: "Home", url: site.url },
+          { name: "Portfolio", url: `${site.url}/portfolio` },
+          { name: study.title, url: `${site.url}/portfolio/${study.slug}` },
+        ]}
+      />
+      <CaseStudyLd study={study} />
       <FadeIn>
         <Link
           href="/portfolio"

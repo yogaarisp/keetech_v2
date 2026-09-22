@@ -1,0 +1,22 @@
+{
+  "name": "KeeTech — IT & AI Solutions Agency di Semarang",
+  "short_name": "KeeTech",
+  "description": "Agensi IT & AI di Semarang: software development, AI integration, CCTV, managed services, dan infrastruktur IT.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/keetech.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/keetech.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

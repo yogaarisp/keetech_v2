@@ -20,3 +20,8 @@ export async function getServicesByDivision(id: DivisionId): Promise<Service[]> 
   const services = await getServices();
   return services.filter((s) => s.division === id);
 }
+
+export async function getServiceBySlug(slug: string): Promise<Service | undefined> {
+  const services = await getServices();
+  return services.find((s) => s.slug === slug);
+}

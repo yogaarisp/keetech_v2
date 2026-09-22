@@ -28,8 +28,18 @@ export type Site = {
     email: string;
     phone: string;
     whatsapp: string;
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+    geo?: {
+      latitude: number;
+      longitude: number;
+    };
     address: string;
     officeHours: string;
+    openingHoursSpec?: string;
   };
   socials: SocialLink[];
   stats: StatItem[];
@@ -84,12 +94,33 @@ export type ComplexityOption = {
   multiplier: number;
 };
 
+export type Article = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  date: string;
+  readTime: string;
+  content: string;
+};
+
+export type Testimonial = {
+  author: string;
+  role: string;
+  company: string;
+  rating: number;
+  text: string;
+};
+
 export type SiteData = {
   site: Site;
   divisions: Division[];
   services: Service[];
   caseStudies: CaseStudy[];
   complexityOptions: ComplexityOption[];
+  articles?: Article[];
+  testimonials?: Testimonial[];
 };
 
 export const defaultData: SiteData = {
@@ -100,13 +131,20 @@ export const defaultData: SiteData = {
     url: "https://keetech.my.id",
     tagline: "Modern IT & AI Solutions Agency",
     description:
-      "KeeTech adalah agensi solusi IT & AI modern yang membantu korporasi dan instansi bertransformasi melalui software enterprise, integrasi AI, dan infrastruktur yang andal.",
+      "KeeTech adalah agensi solusi IT & AI di Semarang yang membantu korporasi dan instansi bertransformasi melalui software enterprise, integrasi AI, dan infrastruktur yang andal. Melayani klien di Semarang, Jawa Tengah, dan seluruh Indonesia.",
     contact: {
       email: "hello@keetech.my.id",
-      phone: "+62 812-0000-0000",
-      whatsapp: "https://wa.me/6281200000000",
-      address: "Jakarta, Indonesia — Melayani klien di seluruh Indonesia",
+      phone: "+62 857-9941-0169",
+      whatsapp: "https://wa.me/6285799410169",
+      streetAddress: "Jl. Pudaksari V, Bumirejo",
+      addressLocality: "Semarang",
+      addressRegion: "Jawa Tengah",
+      postalCode: "50268",
+      addressCountry: "ID",
+      geo: { latitude: -7.0492, longitude: 110.3956 },
+      address: "Jl. Pudaksari V, Bumirejo, Banyumanik, Kota Semarang, Jawa Tengah 50268 — Melayani klien di seluruh Indonesia",
       officeHours: "Senin – Jumat, 09.00 – 18.00 WIB",
+      openingHoursSpec: "Mo-Fr 09:00-18:00",
     },
     socials: [
       { label: "LinkedIn", href: "https://linkedin.com/company/keetech" },
@@ -123,6 +161,7 @@ export const defaultData: SiteData = {
       { label: "Home", href: "/" },
       { label: "Services", href: "/services" },
       { label: "Portfolio", href: "/portfolio" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -432,4 +471,6 @@ export const defaultData: SiteData = {
       multiplier: 2.4,
     },
   ],
+  articles: [],
+  testimonials: [],
 };

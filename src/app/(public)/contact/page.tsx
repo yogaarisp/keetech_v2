@@ -16,9 +16,12 @@ import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/motion/fade-in";
 
 export const metadata: Metadata = {
-  title: "Contact — Konsultasi & Jadwal Meeting",
+  title: "Hubungi KeeTech — Jasa Service PC, CCTV & Website di Semarang",
   description:
-    "Hubungi KeeTech untuk konsultasi proyek IT & AI. Kirim inquiry atau jadwalkan meeting online/on-site dengan tim kami.",
+    "Hubungi KeeTech Semarang untuk jasa service PC, instalasi CCTV, pembuatan website, setup jaringan & server. Konsultasi gratis, teknisi panggilan, dan dukungan 24/7.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 function schedulingOptions(officeHours: string) {
@@ -46,6 +49,7 @@ export default async function ContactPage({
 }: PageProps<"/contact">) {
   const { estimator } = await searchParams;
   const site = await getSite();
+  const telHref = `tel:${site.contact.phone.replace(/[^\d+]/g, "")}`;
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -88,7 +92,7 @@ export default async function ContactPage({
                 </a>
                 <span className="flex items-start gap-3 text-sm text-muted-foreground">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {site.contact.phone}
+                  <a href={telHref} className="hover:text-primary">{site.contact.phone}</a>
                 </span>
                 <span className="flex items-start gap-3 text-sm text-muted-foreground">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
