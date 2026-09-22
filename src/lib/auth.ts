@@ -35,6 +35,8 @@ function verifyToken(token: string): boolean {
 }
 
 export function verifyPassword(input: string): boolean {
+  // Jangan pernah menerima password default di mode produksi.
+  if (process.env.NODE_ENV === "production" && isUsingDefaultPassword()) return false;
   const a = crypto.createHash("sha256").update(input).digest();
   const b = crypto.createHash("sha256").update(getAdminPassword()).digest();
   return crypto.timingSafeEqual(a, b);

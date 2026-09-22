@@ -11,18 +11,43 @@ type FormState = "idle" | "submitting" | "success";
 
 export function ContactForm({ initialMessage = "" }: { initialMessage?: string }) {
   const [state, setState] = useState<FormState>("idle");
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setState("submitting");
+    setError(null);
 
     const data = new FormData(event.currentTarget);
-    // Placeholder endpoint — akan diarahkan ke Laravel API: POST /api/inquiries
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      company: String(data.get("company") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      message: String(data.get("message") ?? ""),
+    };
 
-    const name = String(data.get("name") ?? "");
-    console.info("Inquiry submitted:", { name });
-    setState("success");
+    try {
+      const response = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json().catch(() => null)) as { error?: string } | null;
+      if (!response.ok) {
+        throw new Error(result?.error ?? "Gagal mengirim inquiry.");
+      }
+
+      setState("success");
+    } catch (err) {
+      setState("idle");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Gagal mengirim. Silakan coba lagi atau hubungi kami langsung via WhatsApp."
+      );
+    }
   }
 
   if (state === "success") {
@@ -76,6 +101,11 @@ export function ContactForm({ initialMessage = "" }: { initialMessage?: string }
         />
       </div>
 
+      {error ? (
+        <p className="text-sm text-destructive" role="alert">
+          {error}
+        </p>
+      ) : null}
       <Button type="submit" size="lg" disabled={state === "submitting"} className="w-full sm:w-fit">
         {state === "submitting" ? (
           <>
