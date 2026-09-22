@@ -84,7 +84,9 @@ export function HeroScene() {
           float={-8}
           duration={9}
         >
-          <div className="grid-pattern h-full w-full overflow-hidden rounded-2xl border border-border/70 bg-card/40 opacity-70" />
+          <div className="grid-pattern relative h-full w-full overflow-hidden rounded-2xl border border-border/70 bg-card/40 opacity-70">
+            <div className="animate-scene-orbit absolute -right-16 -top-16 h-56 w-56 rounded-full border border-dashed border-primary/40" />
+          </div>
           <svg
             viewBox="0 0 520 500"
             className="absolute inset-0 h-full w-full text-foreground/25"
@@ -109,12 +111,11 @@ export function HeroScene() {
               <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="4" fill="currentColor" />
             ))}
           </svg>
-          <div className="animate-scene-orbit absolute -right-16 -top-16 h-56 w-56 rounded-full border border-dashed border-primary/40" />
         </Layer>
 
         {/* left metric */}
         <Layer
-          className="left-0 top-10 w-[190px]"
+          className="left-0 top-10 hidden w-[190px] sm:block"
           style={{ transform: "translate3d(-40px, 0, -20px)" }}
           float={-16}
           duration={6.5}
@@ -139,7 +140,7 @@ export function HeroScene() {
 
         {/* right chip */}
         <Layer
-          className="right-2 top-24"
+          className="right-2 top-24 hidden sm:block"
           style={{ transform: "translate3d(30px, 0, 60px)" }}
           float={-10}
           duration={7.5}
@@ -153,7 +154,7 @@ export function HeroScene() {
 
         {/* main console */}
         <Layer
-          className="left-1/2 top-1/2 w-[300px] sm:w-[340px]"
+          className="left-1/2 top-1/2 w-[280px] sm:w-[340px]"
           style={{ transform: "translate3d(-50%, -50%, 30px)" }}
           float={-14}
           duration={8}

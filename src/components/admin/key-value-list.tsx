@@ -33,35 +33,40 @@ export function KeyValueList({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="grid grid-cols-[1fr_1fr_auto] gap-2">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-[1fr_1fr_auto]">
         <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {aHeader}
         </Label>
         <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {bHeader}
         </Label>
-        <span />
+        <span className="hidden sm:block" />
       </div>
 
       {rows.map(([a, b], index) => (
-        <div key={index} className="grid grid-cols-[1fr_1fr_auto] gap-2">
-          <Input
-            name={aName}
-            value={a}
-            placeholder={aPlaceholder}
-            onChange={(e) => update(index, 0, e.target.value)}
-          />
-          <Input
-            name={bName}
-            value={b}
-            placeholder={bPlaceholder}
-            onChange={(e) => update(index, 1, e.target.value)}
-          />
+        <div
+          key={index}
+          className="flex flex-col gap-2 sm:grid sm:grid-cols-[1fr_1fr_auto] sm:items-center"
+        >
+          <div className="flex flex-col gap-2 sm:contents">
+            <Input
+              name={aName}
+              value={a}
+              placeholder={aPlaceholder}
+              onChange={(e) => update(index, 0, e.target.value)}
+            />
+            <Input
+              name={bName}
+              value={b}
+              placeholder={bPlaceholder}
+              onChange={(e) => update(index, 1, e.target.value)}
+            />
+          </div>
           <Button
             type="button"
             variant="ghost"
             size="icon"
-            className="h-10 w-10 text-muted-foreground hover:text-destructive"
+            className="h-10 w-10 self-end text-muted-foreground hover:text-destructive sm:self-auto"
             onClick={() => setRows((prev) => prev.filter((_, i) => i !== index))}
             aria-label="Hapus baris"
           >
